@@ -1,13 +1,12 @@
 """A number-guessing game."""
 
-# Put your code here
+# Put your code here 
 from random import randint
 
 name = input('Greetings, what is your name? : ')
 print(f'Hi, {name}')
 
 target_number = randint(1,100)
-
 guess = int(input(f'{name}, please choose a number between 1 and 100. : '))
 counter = 0
 
