@@ -20,4 +20,4 @@ while not guess == target_number:
 
 
 print(f'Congratulations {name}, {guess} is indeed the target.')
-print(f'You completed the game in {counter} tries.')
+print(f'You completed the game in {counter + 1} tries.') 
