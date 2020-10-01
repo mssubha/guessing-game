@@ -1,23 +1,24 @@
-"""A number-guessing game."""
+import random
 
-# Put your code here 
-from random import randint
-
-name = input('Greetings, what is your name? : ')
-print(f'Hi, {name}')
-
-target_number = randint(1,100)
-guess = int(input(f'{name}, please choose a number between 1 and 100. : '))
+name = input("Enter your name : ")
+print(f"Welcome {name} to play the guessing game!")
+guess = False
+num1 = random.randint(1,101)
 counter = 0
 
+while not guess:
+    try:
+        counter +=1
+        num2 = int(input("Guess a number : "))
+        if num1 == num2:
+            print(f"The correct number is {num1}. You have guessed it right in {counter} attempts.")
+            guess = True
+        elif num1 < num2:
+            print ("Your guess is too high")
+        else:
+            print ("Your guess is too low")
+    except ValueError:
+        print ("Oops!  That was no valid number.  Try again...")
 
-while not guess == target_number:
-    counter += 1
-    if guess < target_number:
-        guess = int(input('We\'re sorry, your guess is too low. Please try again. : '))
-    elif guess > target_number:
-        guess = int(input('We\'re sorry, your guess is too high. Please try again. : '))
+   
 
-
-print(f'Congratulations {name}, {guess} is indeed the target.')
-print(f'You completed the game in {counter + 1} tries.') 
